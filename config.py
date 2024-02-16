@@ -6,103 +6,72 @@ from pyrogram import filters
 
 load_dotenv()
 
-# احصل على هذه القيمة من my.telegram.org/apps
-API_ID = int(getenv("API_ID", ))
-API_HASH = getenv("API_HASH")
+# Get this value from my.telegram.org/apps
+API_ID = int(getenv("API_ID", ""))
+API_HASH = getenv("API_HASH", "")
 
-# احصل على الرمز المميز الخاص بك من @BotFather على Telegram
-BOT_TOKEN = getenv("BOT_TOKEN")
+# Get your token from @BotFather on Telegram.
+BOT_TOKEN = getenv("BOT_TOKEN", "")
 
+# Get your mongo url from cloud.mongodb.com
+MONGO_DB_URI = getenv("MONGO_DB_URI", "")
 
-MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME")
+DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 5400))
 
-# احصل على عنوان URL الخاص بـ mongo من cloud.mongodb.com
-MONGO_DB_URI = getenv("MONGO_DB_URI")
+SONG_DOWNLOAD_DURATION = int(
+    getenv("SONG_DOWNLOAD_DURATION_LIMIT", "5400")
+)
+# Chat id of a group for logging bot's activities
+LOGGER_ID = int(getenv("LOGGER_ID", ""))
 
-DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 1900700))
+# Get this value from @Hot_Girl_Robot on Telegram by /id
+OWNER_ID = int(getenv("OWNER_ID", "6306738739"))
 
-# معرف الدردشة لمجموعة لتسجيل أنشطة الروبوت
-LOGGER_ID = int(getenv("OWNER_ID","6909581339"))
-
-# احصل على هذه القيمة من @KIMY0Bot على Telegram بواسطة /id
-OWNER_ID = int(getenv("OWNER_ID", 6909581339))
-
-
-## املأ هذه المتغيرات إذا كنت تقوم بالنشر على Heroku.
-# اسم تطبيق Heroku الخاص بك
-HEROKU_APP_NAME = getenv("HEROKU_APP_NAME", None)
-
-# احصل عليه من http://dashboard.heroku.com/account
-HEROKU_API_KEY = getenv("HEROKU_API_KEY", None)
+## Fill these variables if you're deploying on heroku.
+# Your heroku app name
+HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
+# Get it from http://dashboard.heroku.com/account
+HEROKU_API_KEY = getenv("HEROKU_API_KEY")
 
 UPSTREAM_REPO = getenv(
     "UPSTREAM_REPO",
-    "https://github.com/kmmi/VeGaXMusic",
+    "https://github.com/kimmy/VeGaX",
 )
-UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "masterr")
+UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "Bwf")
+GIT_TOKEN = getenv(
+    "GIT_TOKEN", None
+)  # Fill this variable if your upstream repository is private
 
-GIT_TOKEN = getenv("GIT_TOKEN", None)
+SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/vegasource")
+SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/groupvega")
 
-SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/VeGaSource")
-
-SUPPORT_CHANNELL = getenv("SUPPORT_CHANNELL", "https://t.me/QURANI_C")
-
-SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/GROUPVEGA")
-
-
-
-
-
-# اضبط هذا على True إذا كنت تريد أن يغادر المساعد الدردشات تلقائيًا بعد فترة زمنية
+# Set this to True if you want the assistant to automatically leave chats after an interval
 AUTO_LEAVING_ASSISTANT = bool(getenv("AUTO_LEAVING_ASSISTANT", False))
-
-
-
-# احصل على بيانات الاعتماد هذه من https://developer.spotify.com/dashboard
+AUTO_SUGGESTION_MODE = getenv("AUTO_SUGGESTION_MODE", "True")
+AUTO_SUGGESTION_TIME = int(
+    getenv("AUTO_SUGGESTION_TIME", "500"))
+# Get this credentials from https://developer.spotify.com/dashboard
 SPOTIFY_CLIENT_ID = getenv("SPOTIFY_CLIENT_ID", None)
 SPOTIFY_CLIENT_SECRET = getenv("SPOTIFY_CLIENT_SECRET", None)
 
 
-# الحد الأقصى لجلب مسار قائمة التشغيل من روابط youtube وspotify وapple.
+# Maximum limit for fetching playlist's track from youtube, spotify, apple links.
 PLAYLIST_FETCH_LIMIT = int(getenv("PLAYLIST_FETCH_LIMIT", 25))
 
-
-# الحد الأقصى لحجم ملفات الصوت والفيديو في Telegram (بالبايت)
+CLEANMODE_DELETE_MINS = int(
+    getenv("CLEANMODE_MINS", "5"))
+# Telegram audio and video file size limit (in bytes)
 TG_AUDIO_FILESIZE_LIMIT = int(getenv("TG_AUDIO_FILESIZE_LIMIT", 104857600))
 TG_VIDEO_FILESIZE_LIMIT = int(getenv("TG_VIDEO_FILESIZE_LIMIT", 1073741824))
 # Checkout https://www.gbmb.org/mb-to-bytes for converting mb to bytes
 
 
-# استخراج جلسه بيروجرام 2 من هناا @Session_GenBot
-
-STRING1 = getenv("STRING_SESSION", None)
+# Get your pyrogram v2 session from @Venom_string_robot on Telegram
+STRING1 = getenv("STRING_SESSION", "")
 STRING2 = getenv("STRING_SESSION2", None)
 STRING3 = getenv("STRING_SESSION3", None)
 STRING4 = getenv("STRING_SESSION4", None)
 STRING5 = getenv("STRING_SESSION5", None)
-
-
-
-#▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
-#▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒──「 ⋆‹sᴏᴜʀᴄᴇ›ダ⸢ᴠᴇɢᴀ♪⸥ 」──▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
-#▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
-#▒▒▇▇▇▒▒▒▒▒▒▒▒▒▒▒▇▇▇▒▒▒▇▇▇▇▇▇▇▇▒▒▒▒▒▇▇▇▇▇▇▇▇▇▇▒▒▒▒▒▇▇▇▇▇▇▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
-#▒▒▒▇▇▇▒▒▒▒▒▒▒▒▒▇▇▇▒▒▒▒▇▇▒▒▒▒▒▒▒▒▒▒▒▇▇▒▒▒▒▒▒▒▒▒▒▒▒▒▇▇▒▒▇▇▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
-#▒▒▒▒▇▇▇▒▒▒▒▒▒▒▇▇▇▒▒▒▒▒▇▇▒▒▒▒▒▒▒▒▒▒▒▇▇▒▒▒▒▒▒▒▒▒▒▒▒▇▇▒▒▒▒▇▇▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
-#▒▒▒▒▒▇▇▇▒▒▒▒▒▇▇▇▒▒▒▒▒▒▇▇▇▇▇▇▇▇▒▒▒▒▒▇▇▒▒▒▒▒▒▒▒▒▒▒▒▇▇▒▒▒▒▇▇▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
-#▒▒▒▒▒▒▇▇▇▒▒▒▇▇▇▒▒▒▒▒▒▒▇▇▒▒▒▒▒▒▒▒▒▒▒▇▇▒▒▒▇▇▇▇▇▒▒▒▒▇▇▇▇▇▇▇▇▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
-#▒▒▒▒▒▒▒▇▇▇▒▇▇▇▒▒▒▒▒▒▒▒▇▇▒▒▒▒▒▒▒▒▒▒▒▇▇▒▒▒▒▒▒▇▇▒▒▒▒▇▇▒▒▒▒▇▇▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
-#▒▒▒▒▒▒▒▒▇▇▇▇▇▒▒▒▒▒▒▒▒▒▇▇▇▇▇▇▇▇▒▒▒▒▒▇▇▇▇▇▇▇▇▇▇▒▒▒▒▇▇▒▒▒▒▇▇▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
-#▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
-#▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒──「 ⸢ᴠᴇɢᴀ♪ダ ᴍᴜsɪᴄ 」──▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
-#▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▢▣▢▣▢▣▢▣▢▣▢▣▢▣▢▣▢▣▢▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
-#▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒──「 ᴋɪᴍᴍʏ‹⋆ダ⸢ᴠᴇɢᴀ♪ 」──▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
-#▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
-
-
-
-
-
 
 
 BANNED_USERS = filters.user()
