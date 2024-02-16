@@ -1,8 +1,30 @@
-<p align="center">
-  <img src="https://telegra.ph/file/e576aa8308c49d945f433.jpg">
-</p>
-
-<p align="center"><a href="https://dashboard.heroku.com/new?template=https://github.com/kimmy/VeGaX"> <img src="https://img.shields.io/badge/Deploy%20On%20Heroku-bringle?style=for-the-badge&logo=heroku" width="220" height="38.45"/></a></p>
+aiofiles
+aiohttp
+asyncio
+beautifulsoup4
+dnspython
+ffmpeg-python
+gitpython
+hachoir
+heroku3
+lyricsgenius
+motor
+numpy
+pillow
+psutil
+py-tgcalls==0.9.7
+pykeyboard
+pyrogram==2.0.106
+python-dotenv
+pyyaml
+requests
+speedtest-cli
+spotipy
+tgcrypto
+unidecode
+yt-dlp
+youtube-search
+youtube-search-python
 
 
 #▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
